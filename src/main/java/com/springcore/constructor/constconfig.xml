@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://wwww.springframework.org.schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/beans/spring-context.xsd">
+
+	<!-- Certificate Class Bean Using Constructor Injection -->
+	<bean class="com.springcore.constructor.Certificate" name="certi">
+		<constructor-arg>
+			<value>JavaProgramming</value>
+		</constructor-arg>
+	</bean>
+
+	<!-- Person Class Bean first bean -->
+	<bean class="com.springcore.constructor.Person" name="person1">
+		<constructor-arg>
+			<value>Onkar</value>
+		</constructor-arg>
+		<constructor-arg>
+			<value>12</value>
+		</constructor-arg>
+		<constructor-arg ref="certi">
+		</constructor-arg>
+		<constructor-arg>
+			<list>
+				<value>Java</value>
+				<value>Python</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	<!-- Person Class Bean Second Bean -->
+	<bean class="com.springcore.constructor.Person" name="person2">
+		<constructor-arg value="Onkar Bhasme" />
+		<constructor-arg value="19" />
+		<constructor-arg ref="certi" />
+		<constructor-arg>
+			<list>
+				<value>Java</value>
+				<value>Python</value>
+			</list>
+		</constructor-arg>
+	</bean>
+</beans>

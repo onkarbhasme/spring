@@ -11,8 +11,7 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
-        ApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("com/springcore/config.xml");
         Student s1 = (Student) context.getBean("student1");
         Student s2 = (Student) context.getBean("student2");
         Student s3 = (Student) context.getBean("student3");
