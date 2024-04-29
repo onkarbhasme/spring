@@ -7,19 +7,17 @@
 	http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/context
 	http://www.springframework.org/schema/context/spring-context.xsd">
+	
 
-	<!-- this is B class bean -->
-	<bean class="com.springcore.ref.B" name="bref">
-		<property name="y" value="90" />
+	<bean class="com.springcore.autowiring.Address" name="add">
+	<property name="street" value="Gangadham"/>  
+	<property name="city" value="Pune"/>
 	</bean>
-
-	<!-- this is A class bean -->
-	<bean class="com.springcore.ref.A" name="aref">
-		<property name="x" value="23" />
-
-		<!-- setting B class bean using ref -->
-		<property name="ob">
-			<ref bean="bref" />
-		</property>
-	</bean>
+	
+	<bean class="com.springcore.autowiring.Emp" name="e1" autowire="byName"/> 
+	
+	<bean class="com.springcore.autowiring.Emp" name="e2" autowire="byType"/> 
+	
+	<bean class="com.springcore.autowiring.Emp" name="e3" autowire="constructor"/> 
+	
 </beans>

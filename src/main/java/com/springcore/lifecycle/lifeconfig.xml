@@ -7,19 +7,18 @@
 	http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/context
 	http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<context:annotation-config/>
 
-	<!-- this is B class bean -->
-	<bean class="com.springcore.ref.B" name="bref">
-		<property name="y" value="90" />
+	<bean class="com.springcore.lifecycle.Samosa" name="s1" init-method="init" destroy-method="destroy">
+	<property name="price" value="10.0"/>  
 	</bean>
-
-	<!-- this is A class bean -->
-	<bean class="com.springcore.ref.A" name="aref">
-		<property name="x" value="23" />
-
-		<!-- setting B class bean using ref -->
-		<property name="ob">
-			<ref bean="bref" />
-		</property>
+	
+	<bean class="com.springcore.lifecycle.Pepsi" name="p1">
+	<property name="price" value="15.0"/>  
+	</bean>
+	
+	<bean class="com.springcore.lifecycle.Example" name="e1">
+	<property name="subject" value="Maths"/>  
 	</bean>
 </beans>
